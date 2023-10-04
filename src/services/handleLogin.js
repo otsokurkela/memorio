@@ -6,15 +6,11 @@ async function handleLogin(loginData) {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password })
+  }).then(async (response) => {
+    if (response.ok) {
+      console.log(await response.json());
+    }
   });
-
-  const data = await response.json();
-
-  if (data.authenticated) {
-    return 'Success';
-  } else {
-    return 'Fail';
-  }
 }
 
 export default handleLogin;

@@ -10,11 +10,9 @@ export default function Login() {
     formState: { errors }
   } = useForm();
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(email);
-    console.log(password);
-    console.log(await handleLogin({ email: email, password: password }));
+    handleLogin({ email: email, password: password });
   };
   return (
     <div>
