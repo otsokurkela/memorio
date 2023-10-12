@@ -9,8 +9,9 @@ async function handleLogin(loginData) {
   }).then(async (response) => {
     if (response.ok) {
       const data = await response.json();
-      localStorage.setItem('accessToken', data.accessToken);
-      localStorage.setItem('refreshToken', data.refreshToken);
+      localStorage.setItem('accessToken', data.tokens.accessToken);
+      localStorage.setItem('refreshToken', data.tokens.refreshToken);
+      localStorage.setItem('userId', data.userId);
     }
   });
 }

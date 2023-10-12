@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-import handleLogin from '../services/handleLogin';
+import handleLogin from '../../services/handleLogin';
 
 export default function Login() {
   const [email, setEmail] = useState('');
