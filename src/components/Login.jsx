@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import handleLogin from '../services/handleLogin';
@@ -13,6 +13,7 @@ export default function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
     handleLogin({ email: email, password: password });
+    console.log(localStorage.getItem('accessToken'));
   };
   return (
     <div>

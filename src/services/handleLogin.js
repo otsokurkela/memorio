@@ -8,7 +8,9 @@ async function handleLogin(loginData) {
     body: JSON.stringify({ email, password })
   }).then(async (response) => {
     if (response.ok) {
-      console.log(await response.json());
+      const data = await response.json();
+      localStorage.setItem('accessToken', data.accessToken);
+      localStorage.setItem('refreshToken', data.refreshToken);
     }
   });
 }
