@@ -13,7 +13,6 @@ export default function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
     handleLogin({ email: email, password: password });
-    console.log(localStorage.getItem('accessToken'));
   };
   return (
     <div>

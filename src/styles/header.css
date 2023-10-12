@@ -1,0 +1,14 @@
+.header {
+  background-color: aquamarine;
+  height: 10vh;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.login-profile-button {
+  height: 5vh;
+  width: 5%;
+  background-color: beige;
+}
