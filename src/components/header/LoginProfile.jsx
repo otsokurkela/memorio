@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import checkLoggedIn from '../utils/checkLoggedIn';
-
 export default function LoginProfile() {
   return (
     <div className="login-profile-button">
-      {checkLoggedIn ? (
-        <>Profile</>
+      {localStorage.getItem('accessToken') != null ? (
+        <Link to="/profile" relative="path">
+          Profile
+        </Link>
       ) : (
         <Link to="/login" relative="path">
           Login

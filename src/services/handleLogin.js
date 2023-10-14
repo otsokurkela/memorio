@@ -12,6 +12,7 @@ async function handleLogin(loginData) {
       localStorage.setItem('accessToken', data.tokens.accessToken);
       localStorage.setItem('refreshToken', data.tokens.refreshToken);
       localStorage.setItem('userId', data.userId);
+      window.location.replace('http://localhost:3000/');
     }
   });
 }
