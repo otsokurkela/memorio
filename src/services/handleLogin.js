@@ -1,8 +1,9 @@
+import variables from '../components/utils/variables';
+
 async function handleLogin(loginData) {
   const email = loginData.email;
   const password = loginData.password;
-
-  await fetch('http://localhost:5000/api/auth/login', {
+  await fetch(variables('api_url').concat('/auth/login'), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password })
@@ -12,7 +13,7 @@ async function handleLogin(loginData) {
       localStorage.setItem('accessToken', data.tokens.accessToken);
       localStorage.setItem('refreshToken', data.tokens.refreshToken);
       localStorage.setItem('userId', data.userId);
-      window.location.replace('http://localhost:3000/');
+      window.location.replace(variables('url'));
     }
   });
 }
