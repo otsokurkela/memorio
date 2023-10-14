@@ -1,8 +1,6 @@
-import refreshLogin from '../components/utils/refreshLogin';
-
 async function getUser() {
   let user = {};
-  const response = await fetch('http://localhost:5000/api/users', {
+  await fetch('http://localhost:5000/api/users', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
