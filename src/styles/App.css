@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+p,
+a {
+  font-family: 'Roboto Mono';
+}
