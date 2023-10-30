@@ -13,6 +13,8 @@ async function handleLogin(loginData) {
       localStorage.setItem('accessToken', data.tokens.accessToken);
       localStorage.setItem('refreshToken', data.tokens.refreshToken);
       localStorage.setItem('userId', data.userId);
+      const now = new Date();
+      localStorage.setItem('tokensSetTime', now);
       window.location.replace(variables('url'));
     }
   });

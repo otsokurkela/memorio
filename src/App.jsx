@@ -14,6 +14,7 @@ import Set from './components/cards/Set';
 function App() {
   const [sets, setSets] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
   useEffect(() => {
     fetchSets();
   }, []);
@@ -27,12 +28,17 @@ function App() {
         authorization: 'Bearer ' + localStorage.getItem('accessToken')
       }
     })
-      .then((response) => response.json())
-      .then((data) => {
-        setSets(data);
-        setLoading(false);
+      .then((response) => {
+        response.json();
+        if (response.ok) setLoggedIn(true);
+        else setLoggedIn(false);
       })
-      .catch((error) => console.error(error));
+      .then((data) => {
+        if (loggedIn) {
+          setSets(data);
+          setLoading(false);
+        }
+      });
   };
 
   return (
@@ -43,15 +49,21 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/sets" element={<Sets />} />
-        {sets.map((set) => {
-          return (
-            <Route
-              key={set.set_id}
-              path={'/sets/'.concat(set.set_id)}
-              element={<Set data={set} />}
-            />
-          );
-        })}
+        {loggedIn ? (
+          <>
+            {sets.map((set) => {
+              return (
+                <Route
+                  key={set.set_id}
+                  path={'/sets/'.concat(set.set_id)}
+                  element={<Set data={set} />}
+                />
+              );
+            })}
+          </>
+        ) : (
+          <></>
+        )}
       </Routes>
     </div>
   );
