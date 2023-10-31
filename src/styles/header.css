@@ -1,6 +1,7 @@
 .header {
   background-color: #131621;
-  height: 10vh;
+  width: 100%;
+  height: 75px;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
@@ -8,8 +9,8 @@
 }
 
 .search-bar {
-  width: 30vw;
-  height: 5vh;
+  width: 35vw;
+  height: 35px;
   background-color: #44486c;
   border-radius: 2vh;
 }

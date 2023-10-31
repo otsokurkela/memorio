@@ -1,0 +1,14 @@
+.main {
+  color: #fff;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+
+.main-section {
+  display: flex;
+  width: 75%;
+}
