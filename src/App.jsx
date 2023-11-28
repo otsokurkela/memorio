@@ -28,17 +28,12 @@ function App() {
         authorization: 'Bearer ' + localStorage.getItem('accessToken')
       }
     })
-      .then((response) => {
-        response.json();
-        if (response.ok) setLoggedIn(true);
-        else setLoggedIn(false);
-      })
+      .then((response) => response.json())
       .then((data) => {
-        if (loggedIn) {
-          setSets(data);
-          setLoading(false);
-        }
-      });
+        setSets(data);
+        setLoading(false);
+      })
+      .catch((error) => console.error(error));
   };
 
   return (
@@ -49,21 +44,15 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/sets" element={<Sets />} />
-        {loggedIn ? (
-          <>
-            {sets.map((set) => {
-              return (
-                <Route
-                  key={set.set_id}
-                  path={'/sets/'.concat(set.set_id)}
-                  element={<Set data={set} />}
-                />
-              );
-            })}
-          </>
-        ) : (
-          <></>
-        )}
+        {sets.map((set) => {
+          return (
+            <Route
+              path={'/sets/'.concat(set.set_id)}
+              key={set.set_id}
+              element={<Set data={set} />}
+            />
+          );
+        })}
       </Routes>
     </div>
   );

@@ -27,7 +27,11 @@ export default function Sets() {
   return (
     <div>
       {sets.map((set) => {
-        return <p key={set.set_id}>{set.set_name}</p>;
+        return (
+          <p key={set.set_id}>
+            {set.set_name} {set.set_id}{' '}
+          </p>
+        );
       })}
     </div>
   );

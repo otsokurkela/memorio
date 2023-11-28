@@ -15,6 +15,9 @@ export default function Header() {
       <Link to="/" relative="path" className="header-link">
         Home
       </Link>
+      <Link to="/sets" relative="path" className="header-link">
+        Sets
+      </Link>
       <SearchBar />
       <LoginProfile className="header-link" />
       <Logout />
