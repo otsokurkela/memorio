@@ -25,3 +25,20 @@
   padding-top: 1vh;
   padding-bottom: 1vh;
 }
+
+.flashcards {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.flashcard {
+  width: 75vw;
+  height: 30vh;
+  background-color: #cac8c5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
