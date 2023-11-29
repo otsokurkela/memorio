@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import variables from '../utils/variables';
+import './../../styles/sets.css';
 
 export default function Sets() {
   const [sets, setSets] = useState([]);
@@ -25,12 +26,12 @@ export default function Sets() {
       .catch((error) => console.error(error));
   };
   return (
-    <div>
+    <div className="sets">
       {sets.map((set) => {
         return (
-          <p key={set.set_id}>
+          <a className="set-link" key={set.set_id} href={'/sets/'.concat(set.set_id)}>
             {set.set_name} {set.set_id}{' '}
-          </p>
+          </a>
         );
       })}
     </div>

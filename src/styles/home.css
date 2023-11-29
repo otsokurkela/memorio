@@ -12,3 +12,10 @@
   display: flex;
   width: 75%;
 }
+
+.sets {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: center;
+}

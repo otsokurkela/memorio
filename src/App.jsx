@@ -1,6 +1,6 @@
 import './styles/App.css';
 import { Routes, Route } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import variables from './components/utils/variables';
 
@@ -10,13 +10,16 @@ import Header from './components/header/Header';
 import Profile from './components/profile/Profile';
 import Sets from './components/cards/Sets';
 import Set from './components/cards/Set';
+import Flashcards from './components/cards/Flashcards';
 
 function App() {
   const [sets, setSets] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
   useEffect(() => {
-    fetchSets();
+    if (loggedIn) {
+      fetchSets();
+    }
   }, []);
 
   const fetchSets = () => {
@@ -44,15 +47,26 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/sets" element={<Sets />} />
-        {sets.map((set) => {
-          return (
-            <Route
-              path={'/sets/'.concat(set.set_id)}
-              key={set.set_id}
-              element={<Set data={set} />}
-            />
-          );
-        })}
+        {loggedIn ? (
+          sets.map((set) => {
+            return (
+              <React.Fragment key={set.set_id}>
+                <Route
+                  path={'/sets/'.concat(set.set_id)}
+                  key={set.set_id}
+                  element={<Set data={set} />}
+                />
+                <Route
+                  path={'/sets/flashcards/'.concat(set.set_id)}
+                  key={set.set_id}
+                  element={<Flashcards data={set} />}
+                />
+              </React.Fragment>
+            );
+          })
+        ) : (
+          <></>
+        )}
       </Routes>
     </div>
   );
