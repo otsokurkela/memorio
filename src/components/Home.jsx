@@ -8,8 +8,7 @@ export default function Home() {
   return (
     <div>
       <div className="main">
-        <RecentSets />
-        <Library />
+        <h1>Home</h1>
       </div>
     </div>
   );

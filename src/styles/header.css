@@ -8,6 +8,9 @@
   align-items: center;
 }
 
+.header a {
+  text-decoration: none;
+}
 .search-bar {
   width: 35vw;
   height: 35px;

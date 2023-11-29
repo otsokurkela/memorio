@@ -11,9 +11,8 @@ import SearchBar from './SearchBar';
 export default function Header() {
   return (
     <div className="header">
-      <h1 className="header-link">Memorio</h1>
       <Link to="/" relative="path" className="header-link">
-        Home
+        <h1 className="header-link">Memorio</h1>
       </Link>
       <Link to="/sets" relative="path" className="header-link">
         Sets
