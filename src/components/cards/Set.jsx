@@ -21,10 +21,6 @@ export default function Set(props) {
                 </tr>
               );
             })}
-            <tr>
-              <td>nimi</td>
-              <td>selitys</td>
-            </tr>
           </tbody>
         </table>
       </div>

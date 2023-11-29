@@ -34,11 +34,12 @@
   align-items: center;
 }
 .flashcard {
-  width: 75vw;
-  height: 30vh;
-  background-color: #cac8c5;
+  width: 40vw;
+  height: 35vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  border-radius: 25px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
