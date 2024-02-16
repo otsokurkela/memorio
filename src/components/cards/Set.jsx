@@ -2,7 +2,6 @@ import React from 'react';
 
 export default function Set(props) {
   const set = props.data;
-  console.log(set.set_cards);
   return (
     <div className="set-page">
       <h1>{set.set_name}</h1>

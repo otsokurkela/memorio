@@ -8,14 +8,16 @@ import Home from './components/Home';
 import Login from './components/profile/Login';
 import Header from './components/header/Header';
 import Profile from './components/profile/Profile';
+
 import Sets from './components/cards/Sets';
 import Set from './components/cards/Set';
 import Flashcards from './components/cards/Flashcards';
+import CreateSet from './components/cards/CreateSet';
 
 function App() {
   const [sets, setSets] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false); // täytyy tehdä jotain
   useEffect(() => {
     if (loggedIn) {
       fetchSets();
@@ -46,7 +48,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/sets" element={<Sets />} />
+        <Route path="/sets" element={<Sets loggedIn={loggedIn} />} />
+        <Route path="/sets/create" element={<CreateSet />} />
         {loggedIn ? (
           sets.map((set) => {
             return (
@@ -65,7 +68,9 @@ function App() {
             );
           })
         ) : (
-          <></>
+          <>
+            <Route path="/login" element={<Login />} />
+          </>
         )}
       </Routes>
     </div>

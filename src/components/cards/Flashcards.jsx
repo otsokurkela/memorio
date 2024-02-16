@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ReactCardFlip from 'react-card-flip';
+import { Link } from 'react-router-dom';
 
 export default function Flashcards(props) {
   const set = props.data;
@@ -47,6 +48,10 @@ export default function Flashcards(props) {
       </ReactCardFlip>
       <button onClick={nextCard}>Next card</button>
       <button onClick={previousCard}>Previous card</button>
+
+      <Link to={'/sets/' + set.set_id}>
+        <button>End flashcards</button>
+      </Link>
     </div>
   );
 }
