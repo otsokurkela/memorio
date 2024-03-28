@@ -3,7 +3,7 @@ import ReactCardFlip from 'react-card-flip';
 import { Link } from 'react-router-dom';
 
 export default function Flashcards(props) {
-  const set = props.data;
+  const set = props.set;
   const [isFlipped, setIsFlipped] = useState(false);
   const [currentCard, setCurrentCard] = useState(0);
 

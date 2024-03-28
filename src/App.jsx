@@ -13,11 +13,12 @@ import Sets from './components/cards/Sets';
 import Set from './components/cards/Set';
 import Flashcards from './components/cards/Flashcards';
 import CreateSet from './components/cards/CreateSet';
+import EditSet from './components/cards/EditSet';
 
 function App() {
   const [sets, setSets] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false); // täytyy tehdä jotain
+  const [loggedIn, setLoggedIn] = useState(true); // täytyy tehdä jotain
   useEffect(() => {
     if (loggedIn) {
       fetchSets();
@@ -59,6 +60,13 @@ function App() {
                   key={set.set_id}
                   element={<Set data={set} />}
                 />
+
+                <Route
+                  path={'/sets/edit/'.concat(set.set_id)}
+                  key={set.set_id}
+                  element={<EditSet data={set} />}
+                />
+
                 <Route
                   path={'/sets/flashcards/'.concat(set.set_id)}
                   key={set.set_id}
