@@ -1,4 +1,4 @@
-import variables from '../components/utils/variables';
+import variables from '../utils/variables';
 
 export default async function handleLogOut() {
   localStorage.removeItem('accessToken');

@@ -1,19 +1,19 @@
-import './styles/App.css';
+import './../styles/App.css';
 import { Routes, Route } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 
-import variables from './components/utils/variables';
+import variables from '../utils/variables';
 
-import Home from './components/Home';
-import Login from './components/profile/Login';
-import Header from './components/header/Header';
-import Profile from './components/profile/Profile';
+import Home from './home/Home';
+import Login from './profile/Login';
+import Header from './header/Header';
+import Profile from './profile/Profile';
 
-import Sets from './components/cards/Sets';
-import Set from './components/cards/Set';
-import Flashcards from './components/cards/Flashcards';
-import CreateSet from './components/cards/CreateSet';
-import EditSet from './components/cards/EditSet';
+import Sets from './cards/Sets';
+import Set from './cards/Set';
+import Flashcards from './cards/Flashcards';
+import CreateSet from './cards/CreateSet';
+import EditSet from './cards/EditSet';
 
 function App() {
   const [sets, setSets] = useState([]);

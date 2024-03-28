@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import LoginProfile from './LoginProfile';
 import Logout from './Logout';
-import Home from '../Home';
+import Home from '../home/Home';
 import SearchBar from './SearchBar';
 
 export default function Header() {

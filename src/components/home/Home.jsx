@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './../styles/home.css';
+import './../../styles/home.css';
 
-import RecentSets from './home/RecentSets';
-import Library from './home/Library';
+import RecentSets from './RecentSets';
+import Library from './Library';
 
 export default function Home() {
   return (

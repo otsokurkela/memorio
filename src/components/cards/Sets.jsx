@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import variables from '../utils/variables';
+import variables from '../../utils/variables';
 import './../../styles/sets.css';
 
 export default function Sets() {

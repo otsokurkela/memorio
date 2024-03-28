@@ -1,4 +1,4 @@
-import variables from '../components/utils/variables';
+import variables from '../utils/variables';
 
 async function handleLogin(loginData) {
   const email = loginData.email;
